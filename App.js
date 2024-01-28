@@ -1,7 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { BlogProvider } from './src/context/BlogContext';
+import {
+  BlogProvider
+} from './src/context/BlogContext';
 
 import BlogList from './src/screens/BlogList';
 import BlogListDetail from './src/screens/BlogListDetail';

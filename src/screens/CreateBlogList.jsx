@@ -1,12 +1,14 @@
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import BlogContext from '../context/BlogContext';
 
-const CreateBlogList = () => {
+const CreateBlogList = ({ navigation }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const { dispatch } = useContext(BlogContext);
 
   const Submit = () => {
-    console.log(title+","+content)
+    dispatch({ type: 'ADD', payload: { title: title, content: content } })
   }
 
   return (
@@ -24,7 +26,7 @@ const CreateBlogList = () => {
       <Text style={styles.headStyle}>Enter Content:</Text>
       <TextInput
         style={styles.inputStyle}
-        autoCapitalize='sentences'
+        autoCapitalize='none'
         autoCorrect={false}
         value={content}
         onChangeText={(newContent) => {
@@ -33,9 +35,9 @@ const CreateBlogList = () => {
       />
       <Button
         title='Save'
-        style={styles.saveButtonStyle}
         onPress={() => {
-          Submit();
+          Submit()
+          navigation.navigate('Home');
         }}
       />
     </View>
@@ -59,8 +61,5 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 1,
     paddingHorizontal: 5,
-  },
-  saveButtonStyle: {
-
   }
 })

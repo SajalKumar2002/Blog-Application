@@ -7,12 +7,21 @@ function reducer(state, action) {
         case 'ADD':
             return [
                 ...state,
-                { title: `Blog Posts #${state.length + 1}` }
+                { id: Math.floor(Math.random() * 99999), title: action.payload.title, content: action.payload.content }
             ]
         case 'EDIT':
-            return state;
+            return state.map((item) => {
+                if (item.id === action.payload.id) {
+                    return { title: action.payload.title, content: action.payload.content }
+                }
+                return item;
+            })
         case 'DELETE':
-            return state;
+            return state.filter((item) => {
+                if (item.id !== action.payload.id) {
+                    return item;
+                }
+            })
         default:
             return state;
     }
