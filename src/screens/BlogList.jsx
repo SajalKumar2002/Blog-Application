@@ -5,7 +5,7 @@ import { Feather } from '@expo/vector-icons';
 
 const BlogList = ({ navigation }) => {
   const { data, dispatch } = useContext(BlogContext);
-
+  
   useEffect(() => {
 
     navigation.setOptions({

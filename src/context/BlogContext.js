@@ -12,7 +12,7 @@ function reducer(state, action) {
         case 'EDIT':
             return state.map((item) => {
                 if (item.id === action.payload.id) {
-                    return { title: action.payload.title, content: action.payload.content }
+                    return { id: action.payload.id, title: action.payload.title, content: action.payload.content }
                 }
                 return item;
             })

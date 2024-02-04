@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "blog",
-    "slug": "blog",
+    "slug": "task-manager",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.sajalkumar_2002.taskmanager"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e7664bb3-aade-4f30-a817-37841e8cb350"
+      }
+    },
+    "owner": "sajalkumar_2002"
   }
 }
