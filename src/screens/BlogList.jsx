@@ -1,13 +1,12 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native'
 import BlogContext from '../context/BlogContext';
 import { Feather } from '@expo/vector-icons';
 
 const BlogList = ({ navigation }) => {
   const { data, dispatch } = useContext(BlogContext);
-  
-  useEffect(() => {
 
+  useEffect(() => {
     navigation.setOptions({
       headerRight: () => (
         <TouchableOpacity onPress={() => navigation.navigate('Create')}>

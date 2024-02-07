@@ -5,6 +5,8 @@ import {
   BlogProvider
 } from './src/context/BlogContext';
 
+import { StatusBar } from 'expo-status-bar';
+
 import BlogList from './src/screens/BlogList';
 import BlogListDetail from './src/screens/BlogListDetail';
 import CreateBlogList from './src/screens/CreateBlogList';
@@ -23,6 +25,7 @@ export default function App() {
           <Stack.Screen name="Detail" component={BlogListDetail} />
         </Stack.Navigator>
       </NavigationContainer>
+      <StatusBar backgroundColor='black' />
     </BlogProvider>
   );
 }
